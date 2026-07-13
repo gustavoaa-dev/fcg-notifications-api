@@ -1,6 +1,6 @@
 # FCG Notifications API
 
-Microsserviço responsável pelo envio de notificações da plataforma FCG (Facul Cloud Games).
+Microsserviço responsável pelo envio de notificações da plataforma FCG (Fiap Cloud Games).
 
 ## Funcionalidades
 
