@@ -1,4 +1,4 @@
-namespace FCG.NotificationsAPI.Domain.Events;
+namespace FCG.Shared.Events;
 
 public class UserCreatedEvent
 {

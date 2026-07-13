@@ -1,5 +1,5 @@
 using FCG.NotificationsAPI.Application.Services;
-using FCG.NotificationsAPI.Domain.Events;
+using FCG.Shared.Events;
 using MassTransit;
 using Microsoft.Extensions.Logging;
 

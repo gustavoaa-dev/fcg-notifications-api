@@ -1,4 +1,4 @@
-using FCG.NotificationsAPI.Domain.Events;
+using FCG.Shared.Events;
 using Microsoft.Extensions.Logging;
 
 namespace FCG.NotificationsAPI.Application.Services;
