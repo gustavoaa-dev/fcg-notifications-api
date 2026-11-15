@@ -12,6 +12,11 @@ builder.Logging.AddFilter("Microsoft", LogLevel.Warning);
 builder.Logging.AddFilter("System", LogLevel.Warning);
 
 var rabbitMqHost = Environment.GetEnvironmentVariable("RABBITMQ_HOST") ?? "localhost";
+// Sem default: credencial embutida no codigo e o que a fase proibe.
+var rabbitUser = Environment.GetEnvironmentVariable("RABBITMQ_USER")
+    ?? throw new InvalidOperationException("A variável RABBITMQ_USER não foi configurada.");
+var rabbitPass = Environment.GetEnvironmentVariable("RABBITMQ_PASS")
+    ?? throw new InvalidOperationException("A variável RABBITMQ_PASS não foi configurada.");
 
 builder.Services.AddMassTransit(x =>
 {
@@ -22,8 +27,8 @@ builder.Services.AddMassTransit(x =>
     {
         cfg.Host(rabbitMqHost, "/", h =>
         {
-            h.Username("guest");
-            h.Password("guest");
+            h.Username(rabbitUser);
+            h.Password(rabbitPass);
         });
 
         cfg.Message<FCG.Shared.Events.UserCreatedEvent>(m => m.SetEntityName("UserCreatedEvent"));
